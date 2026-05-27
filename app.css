@@ -88,7 +88,7 @@ p {
     position: fixed;
     list-style: none;
     top: 3rem;
-    left: -7rem;
+    left: -8rem;
     background-color: var(--cl);
     backdrop-filter: blur(4px);
     padding: .5rem;
@@ -97,7 +97,7 @@ p {
     transition: all ease-in-out .2s;
 }
 #menu.show {
-    transform: translateX(8rem);
+    transform: translateX(9rem);
 }
 li {
     color: var(--fg);
@@ -117,7 +117,7 @@ li:hover {
     height: 300px;
     justify-content: center;
     align-items: center;
-    padding: 1rem 3rem;
+    padding: 3rem 2rem;
     background-color: var(--bg);
 }
 .intro {
@@ -130,7 +130,51 @@ li:hover {
     object-fit: cover;
 }
 /*Gallery*/
+.galleries {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    background-color: var(--bg);
+    padding: 0 5rem;
+    gap: 1rem;
+}
 .gallery {
+    position: relative;
+    flex-grow: 1;  
+    width: 250px;
+    height: 350px;
+    background-size: cover;
+    background-position: center;    
+    filter: brightness(1);
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px var(--bg);
+    text-align: center;
+    align-content: center;
+    transition: all ease-in-out .1s;
+}
+/*.gallery:hover {
+    filter: brightness(1);
+}*/
+.pasture {
+    background-image: url(pasture.jpg);
+}
+.portraits {
+    background-image: url(portraits.jpg);
+}
+.events {
+    background-image: url(events.jpg);
+}
+.people {
+    background-image: url(people.jpg);
+}
+
+/*.gallery {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -147,7 +191,7 @@ li:hover {
 }
 .landscape {
     width: 30%;
-}
+}*/
 /*INFO8*/
 .contact {
     position: relative;
@@ -156,7 +200,7 @@ li:hover {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem 1rem;
 }
 a {
     font-size: 1rem;

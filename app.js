@@ -13,6 +13,11 @@ function about() {
     about.scrollIntoView({ behavior: 'smooth' });  
     menutoggle();  
 };
+function galleries() {
+    const galleries = document.querySelector('.galleries');
+    galleries.scrollIntoView({ behavior: 'smooth' });
+    menutoggle();
+};
 function contact() {
     const contact = document.querySelector('.contact');
     contact.scrollIntoView({ behavior: 'smooth' });
