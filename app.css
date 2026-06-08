@@ -27,10 +27,10 @@
 }
 /*GENERAL*/
 :root {
-    --bg: rgb(22, 18, 18);
-    --fg: rgb(255, 228, 228);    
-    --cl: rgba(0, 0, 0, 0.25);
-    --ac: rgb(200, 255, 0);
+    --bg: black;
+    --fg: white;    
+    --cl: rgba(0, 0, 0, .25);
+    --ac: rgb(0, 25, 25);
 }
 body{
     background-color: var(--bg);
@@ -39,32 +39,21 @@ body{
 }
 p {
     font-size: 1rem;
+    font-family: monospace, sans-serif;
     color: var(--fg);
     margin: .5rem;
 }
-/*TOP*/
-.hero {
-    display: block;
-    posistion: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url(landscapeHero.jpg);
-    background-size: cover;
-    background-position: center;
+a {
+    font-size: 1rem;
+    font-family: monospace, sans-serif;
+    text-decoration: none;
+    color: var(--fg);
+    margin: .5rem;
 }
-.home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--cl);
+a:hover {
+    color: rgb(180, 180, 180);
 }
-.logo {
-    position: absolute;    
-    width: 350px;
-    height: 350px;
-}
+/*MENU*/
 #menubtn {
     display: grid;
     grid-template-columns: 1fr;
@@ -74,62 +63,140 @@ p {
     left: 1rem;
     width: 35px;
     height: 35px;
-    transition: all ease-in-out .2s;    
+    transition: all ease-in-out .1s;    
 }
 #menubtn:hover {
+    opacity: .8;
 }
 .line{
     width: 100%;
     height: 6px;
-    border-radius: 3px;
+    border-radius: 0;
     background-color: white;
 }
 #menu {
+    display: flex;
     position: fixed;
     list-style: none;
-    top: 3rem;
-    left: -8rem;
-    background-color: var(--cl);
-    backdrop-filter: blur(4px);
-    padding: .5rem;
-    border-radius: .5rem;
-    list-style: none;
+    top: -8rem;
+    left: 0rem;
+    right: 0;
+    background-color: var(--ac);
+    padding: 0 1rem 0 4rem;
     transition: all ease-in-out .2s;
 }
 #menu.show {
-    transform: translateX(9rem);
+    transform: translateY(7rem);
 }
 li {
+    width: 100%;
+    text-align: center;
+    flex-grow: 1;
     color: var(--fg);
     font-size: 1.5rem;
+    font-family: arial, sans-serif;
     text-transform: capitalize;
     margin: 1rem .5rem;
-    transition: all ease-in-out .2s;
+    transition: all ease-in-out .1s;
 }
 li:hover {
+    opacity: .8;
+}
+/*HERO*/
+.hero {
+    position: relative;    
+    height: 65vh;
+    width: 100%;
+    background-image: url(img1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/*HOME*/
+.home {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 65% 35%;
+    height: 100vh;
+    background-color: var(--cl); 
+}
+.homeText {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    justify-self: center;  
+    background-color: var(--ac);    
+    padding: 5rem;
+}
+.logo {   
+    width: 300px;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+    border-radius: 3rem;
+}
+h1 {
+    grid-column: 2 / 4;
+    color: white;    
+    font-family: arial, sans-serif;
+    font-size: 2rem;
+    align-self: end;
+}
+.slogan {
+    grid-column: 2 / 4;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: monospace, sans-serif;
+}
+/*ABOUT*/
+.about {
+    position: relative; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    padding: 5rem;
+    gap: 5rem;
+    background-color: var(--bg);
+    margin: 0;
+}
+.column {
+    position: relative;
+    display: grid;
+    height: 100%;
+    justify-items: center;
+}
+h2 {
+    width: 100%;
+    color: white;
+    font-family: arial, sans-serif;
+    font-size: 1.75rem;
+    text-align: center;
+}
+.sheet1, .sheet2 {
+    position: absolute;
+    width: 450px;
+    aspect-ratio: 1/1;
+    border: 2cap solid var(--fg);
+    border-bottom: 7rem solid var(--fg);
+    background-size: cover;
+    background-position: center;
+}
+.sheet1 {
+    rotate: -4deg;
+    top: 10rem;
+    background-image: url(me1.jpg);
+}
+.sheet2 {
+    rotate: 5deg;
+    top: 12rem;
+    background-image: url(me2.jpg);
+}
+.sheeText {
+    position: absolute;
+    bottom: -5rem;
+    color: black;
 
 }
-/*ME*/
-.about {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 300px);
-    height: 300px;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 2rem;
-    background-color: var(--bg);
-}
-.intro {
-    font-size: 1.2rem;
-}
-.headshot {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-/*Gallery*/
+/*GALLERIES*/
 .galleries {
     position: relative;
     display: flex;
@@ -137,14 +204,14 @@ li:hover {
     justify-content: space-evenly;
     align-items: space-evenly;
     background-color: var(--bg);
-    padding: 0 5rem;
+    padding: 3rem 5rem;
     gap: 1rem;
 }
 .gallery {
     position: relative;
     flex-grow: 1;  
-    width: 250px;
-    height: 350px;
+    width: 350px;
+    height: 550px;
     background-size: cover;
     background-position: center;    
     filter: brightness(1);
@@ -158,9 +225,9 @@ li:hover {
     align-content: center;
     transition: all ease-in-out .1s;
 }
-/*.gallery:hover {
+.gallery:hover {
     filter: brightness(1);
-}*/
+}
 .pasture {
     background-image: url(pasture.jpg);
 }
@@ -173,26 +240,7 @@ li:hover {
 .people {
     background-image: url(people.jpg);
 }
-
-/*.gallery {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: .5rem;
-    width: 100%;
-    background-color: var(--bg);
-}
-.gal-img {
-    flex-grow: 1;
-    width: 15%;
-    height: auto;
-    object-fit: cover;
-}
-.landscape {
-    width: 30%;
-}*/
-/*INFO8*/
+/*CONTACT*/
 .contact {
     position: relative;
     width: 100%;
@@ -202,38 +250,41 @@ li:hover {
     align-items: center;
     padding: 2rem 1rem;
 }
-a {
-    font-size: 1rem;
-    text-decoration: none;
-    color: var(--fg);
-    margin: .5rem;
-}
-a:hover {
-    color: rgb(180, 180, 180);
-}
 /*RESPONSIVE*/
 
 @media screen and (max-width: 768px) {
+    .front {
+    margin-top: 0vh;
+    }    
+    #menu {
+        padding: .5rem 1rem .5rem 4rem;
+    }
+    li {
+        font-size: 1rem;
+    }
     .hero {
-        background-image: url(portraitHero.jpg);
+        height: 100%;
+        background-image: url(pasture.jpg);
     }
     .logo {
         width: 250px;
         height: 250px;
+        margin: 5rem auto 2rem auto;
+    }
+    .home {
+        grid-template-rows: repeat(2, 50%);
+    }
+    .homeText {
+        padding: 0 3rem 3rem 3rem;
+        background-color: transparent;
     }
     .about {
-        grid-template-columns: repeat(2, 190px);
-        height: 200px;
-        padding: 1rem;
+        height: 150%;
+        grid-template-columns: 1fr;
     }
-    .headshot {
-        width: 150px;
-        height: 150px;
+    .sheet1, .sheet2 {
+        top: 7rem;
+        width: 300px;
     }
-    .gal-img {
-        width: 45%;
-    }
-    .landscape {
-        width: 100%;
-    }
+
 }
