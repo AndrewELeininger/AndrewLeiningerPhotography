@@ -211,15 +211,14 @@ h2 {
 .gallery {
     position: relative;
     flex-grow: 1;  
-    width: 350px;
-    height: 550px;
+    padding: 5rem;
     background-size: cover;
     background-position: center;    
-    filter: brightness(1);
+    filter: brightness(1); 
     font-family: arial, sans-serif;
     font-weight: bold;
-    color: white;
-    font-size: 1.5rem;
+    color: var(--fg);
+    font-size: 4rem;
     text-transform: uppercase;
     text-shadow: 0 0 5px var(--bg);
     text-align: center;
@@ -229,17 +228,23 @@ h2 {
 .gallery:hover {
     filter: brightness(1);
 }
-.bnw {
-    background-image: url(bnw.jpg);
+.timeless {
+    background-image: url(timeless.jpg);
 }
-.portraits {
-    background-image: url(portraits.jpg);
+.classy {
+    background-image: url(classy.jpg);
 }
-.events {
-    background-image: url(events.jpg);
+.elegant {
+    background-image: url(elegant.jpg);
 }
-.people {
-    background-image: url(people.jpg);
+.dynamic {
+    background-image: url(dynamic.jpg);
+}
+.real {
+    background-image: url(real.jpg);
+}
+.unique {
+    background-image: url(unique.jpg);
 }
 /*CONTACT*/
 .contact {
@@ -292,5 +297,9 @@ h2 {
     }
     .sheeText {
         font-size: .75rem;
+    }
+    .gallery {
+        padding: 5rem 3rem;
+        font-size: 2rem;
     }
 }
